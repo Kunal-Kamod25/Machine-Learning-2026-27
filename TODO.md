@@ -13,7 +13,7 @@
 - [x] **Step 2.3**: Train and save performance plots (Training Loss, Validation Loss, Accuracy vs. Epochs) -> *Saved in [plots/all_optimizers_comparison.png](./plots/all_optimizers_comparison.png)*
 - [x] **Step 2.4**: Run learning-rate sensitivity test ($10^{-1}, 10^{-2}, 10^{-3}, 10^{-4}$) -> *Saved in [plots/learning_rate_sensitivity.png](./plots/learning_rate_sensitivity.png)*
 - [x] **Step 2.5**: Construct the final comparison table (Convergence speed, Peak validation accuracy, Stability, Tuning effort) -> *Saved in [plots/benchmark_summary.csv](./plots/benchmark_summary.csv)*
-- [x] **Step 2.6**: Create interactive, fully pre-executed Jupyter Notebook -> *See [optimizers_deep_dive.ipynb](./optimizers_deep_dive.ipynb)*
+- [x] **Step 2.6**: Create interactive, fully pre-executed Jupyter Notebook -> *See [optimizers_benchmark.ipynb](./optimizers_benchmark.ipynb)*
 
 ## Phase 3: Teacher Scenarios & Viva Defense
 - [x] **Step 3.1**: Scenario reasoning (Sparse gradients, noisy gradients, saddle points, high/low learning rate) -> *See [docs/03_application_scenarios_and_viva.md](./docs/03_application_scenarios_and_viva.md)*

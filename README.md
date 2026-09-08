@@ -28,7 +28,7 @@ To ensure equal mastery and seamless delivery, the presentation is divided into 
 
 All detailed notes, mathematical derivations, experiment guides, and scripts have been compiled in [`docs/`](./docs/):
 
-1. 📓 **[Interactive Jupyter Notebook (`optimizers_deep_dive.ipynb`)](./optimizers_deep_dive.ipynb)**  
+1. 📓 **[Interactive Jupyter Notebook (`optimizers_benchmark.ipynb`)](./optimizers_benchmark.ipynb)**  
    *Complete runnable notebook with student comments, equations, training pipelines, interactive curves, and viva defense.*
 2. 📖 **[01. Theory & 12-Point Optimizer Breakdown](./docs/01_theory_and_optimizers.md)**  
    *Foundations from scratch, full 12-point breakdowns for all 6 optimizers, mathematical symbols, and the flat vs. sharp minima debate.*
