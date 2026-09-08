@@ -28,13 +28,15 @@ To ensure equal mastery and seamless delivery, the presentation is divided into 
 
 All detailed notes, mathematical derivations, experiment guides, and scripts have been compiled in [`docs/`](./docs/):
 
-1. 📖 **[01. Theory & 12-Point Optimizer Breakdown](./docs/01_theory_and_optimizers.md)**  
+1. 📓 **[Interactive Jupyter Notebook (`optimizers_deep_dive.ipynb`)](./optimizers_deep_dive.ipynb)**  
+   *Complete runnable notebook with student comments, equations, training pipelines, interactive curves, and viva defense.*
+2. 📖 **[01. Theory & 12-Point Optimizer Breakdown](./docs/01_theory_and_optimizers.md)**  
    *Foundations from scratch, full 12-point breakdowns for all 6 optimizers, mathematical symbols, and the flat vs. sharp minima debate.*
-2. 🔬 **[02. Empirical Benchmark & Experiment Guide](./docs/02_experiment_and_benchmarks.md)**  
+3. 🔬 **[02. Empirical Benchmark & Experiment Guide](./docs/02_experiment_and_benchmarks.md)**  
    *Code structure of `experiment.py`, fair testing controls, evaluation metrics, and result interpretation.*
-3. 🎯 **[03. Application Scenarios & Viva Defense](./docs/03_application_scenarios_and_viva.md)**  
+4. 🎯 **[03. Application Scenarios & Viva Defense](./docs/03_application_scenarios_and_viva.md)**  
    *4-tier structured answers (Beginner, Technical, Math, 10-Second Viva Punchline) for teacher grilling scenarios.*
-4. 🎤 **[04. Presentation Slides & Word-for-Word Scripts](./docs/04_presentation_slides_and_scripts.md)**  
+5. 🎤 **[04. Presentation Slides & Word-for-Word Scripts](./docs/04_presentation_slides_and_scripts.md)**  
    *Slide-by-slide layout (11 slides), diagram descriptions, and word-for-word scripts for Person 1, Person 2, and Person 3.*
 
 ---
