@@ -100,10 +100,25 @@ Validation Accuracy after 3 epochs under different learning rates $\eta \in [10^
 
 ## 📈 Visual Benchmark Plots
 
-### All Optimizers Comparison Curves
+### 1. Individual Optimizer Benchmarks (Dedicated 2-Panel Trajectories)
+Each optimizer was evaluated individually in its own dedicated notebook cell and script pipeline on the exact same 1,000 Fashion-MNIST samples:
+
+| 1. SGD (Kunal) | 2. SGD + Momentum (Kunal) |
+| :---: | :---: |
+| ![SGD Benchmark](./plots/01_sgd_benchmark.png) | ![Momentum Benchmark](./plots/02_momentum_benchmark.png) |
+| **3. AdaGrad (Rahul)** | **4. RMSProp (Rahul)** |
+| ![AdaGrad Benchmark](./plots/03_adagrad_benchmark.png) | ![RMSProp Benchmark](./plots/04_rmsprop_benchmark.png) |
+| **5. Adam (Pankaj)** | **6. Nadam (Pankaj)** |
+| ![Adam Benchmark](./plots/05_adam_benchmark.png) | ![Nadam Benchmark](./plots/06_nadam_benchmark.png) |
+
+---
+
+### 2. Master Combined Comparison Dashboard (All 6 Overlaid)
 ![All Optimizers Comparison](./plots/all_optimizers_comparison.png)
 
-### Learning Rate Sensitivity Analysis
+---
+
+### 3. Learning Rate Sensitivity Analysis ($\eta \in [10^{-1}, 10^{-2}, 10^{-3}, 10^{-4}]$)
 ![Learning Rate Sensitivity](./plots/learning_rate_sensitivity.png)
 
 ---

@@ -83,6 +83,23 @@ optimizer_configs = {
 | **AdaGrad** | 70.70% | 70.90% | 70.60% | 37.50% |
 | **Adam** | 32.70% | **74.60%** | **74.50%** | 48.90% |
 
+### 3.3 Visual Plots & Individual Optimizer Trajectories
+
+#### 1. Individual Optimizer Benchmarks (Dedicated 2-Panel Trajectories)
+| 1. SGD (Kunal) | 2. SGD + Momentum (Kunal) |
+| :---: | :---: |
+| ![SGD Benchmark](../plots/01_sgd_benchmark.png) | ![Momentum Benchmark](../plots/02_momentum_benchmark.png) |
+| **3. AdaGrad (Rahul)** | **4. RMSProp (Rahul)** |
+| ![AdaGrad Benchmark](../plots/03_adagrad_benchmark.png) | ![RMSProp Benchmark](../plots/04_rmsprop_benchmark.png) |
+| **5. Adam (Pankaj)** | **6. Nadam (Pankaj)** |
+| ![Adam Benchmark](../plots/05_adam_benchmark.png) | ![Nadam Benchmark](../plots/06_nadam_benchmark.png) |
+
+#### 2. Master Combined Comparison Dashboard (All 6 Overlaid)
+![All Optimizers Comparison](../plots/all_optimizers_comparison.png)
+
+#### 3. Learning Rate Sensitivity Sweep
+![Learning Rate Sensitivity](../plots/learning_rate_sensitivity.png)
+
 ---
 
 ## 4. Key Takeaways from the Data

@@ -12,6 +12,7 @@ Build and execute optimizers_deep_dive.ipynb with:
 4. LR sensitivity sweep, generalization theory, and viva questions.
 """
 
+import os
 import io
 import sys
 import copy
@@ -21,6 +22,12 @@ import contextlib
 import matplotlib
 matplotlib.use('Agg')  # Headless non-blocking backend
 import matplotlib.pyplot as plt
+
+output_path = "c:/Users/kunal/OneDrive/Desktop/Machine-Learning-2026-27/optimizers_deep_dive.ipynb"
+if os.path.exists(output_path):
+    print(f"[*] Deleting old notebook file at {output_path}...")
+    os.remove(output_path)
+    print("[*] Old notebook file removed.")
 
 execution_env = {}
 
@@ -306,6 +313,17 @@ def train_and_plot_optimizer(opt_name, get_opt_fn, color_hex, epochs=10):
     ax2.grid(True, linestyle=\"--\", alpha=0.6)
     
     plt.tight_layout()
+    os.makedirs("./plots", exist_ok=True)
+    fname_map = {
+        "SGD": "01_sgd_benchmark.png",
+        "SGD + Momentum": "02_momentum_benchmark.png",
+        "AdaGrad": "03_adagrad_benchmark.png",
+        "RMSProp": "04_rmsprop_benchmark.png",
+        "Adam": "05_adam_benchmark.png",
+        "Nadam": "06_nadam_benchmark.png"
+    }
+    if opt_name in fname_map:
+        fig.savefig(f"./plots/{fname_map[opt_name]}", dpi=200, bbox_inches='tight')
     plt.show()
     
     return history, duration
@@ -553,8 +571,11 @@ axs[1, 1].tick_params(axis='x', rotation=15)
 axs[1, 1].grid(True, axis='y', linestyle="--", alpha=0.6)
 
 plt.tight_layout()
+os.makedirs("./plots", exist_ok=True)
+fig.savefig("./plots/all_optimizers_comparison.png", dpi=250, bbox_inches='tight')
 plt.show()
 
+df_comparison.to_csv("./plots/benchmark_summary.csv", index=False)
 print("\\n" + "="*85)
 print("FINAL BENCHMARK COMPARISON TABLE (1,000 SAMPLES)")
 print("="*85)
@@ -615,11 +636,12 @@ for opt in test_opts:
     plt.plot([str(lr) for lr in lrs], sens_results[opt], marker='o', linewidth=2.5, 
              label=opt, color=color_map[opt])
 
-plt.title(\"Learning Rate Sensitivity (Performance after 3 Epochs)\", fontsize=13, fontweight='bold')
-plt.xlabel(\"Learning Rate (\\u03b7)\", fontsize=11)
-plt.ylabel(\"Validation Accuracy (%)\", fontsize=11)
+plt.title("Learning Rate Sensitivity (Performance after 3 Epochs)", fontsize=13, fontweight='bold')
+plt.xlabel("Learning Rate (\\u03b7)", fontsize=11)
+plt.ylabel("Validation Accuracy (%)", fontsize=11)
 plt.legend(frameon=True)
-plt.grid(True, linestyle=\"--\", alpha=0.6)
+plt.grid(True, linestyle="--", alpha=0.6)
+plt.savefig("./plots/learning_rate_sensitivity.png", dpi=200, bbox_inches='tight')
 plt.show()
 """)
 

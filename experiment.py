@@ -186,6 +186,24 @@ all_results = {}
 summary_metrics = []
 
 EPOCHS = 10
+filename_map = {
+    "SGD": "01_sgd_benchmark.png",
+    "SGD + Momentum": "02_momentum_benchmark.png",
+    "AdaGrad": "03_adagrad_benchmark.png",
+    "RMSProp": "04_rmsprop_benchmark.png",
+    "Adam": "05_adam_benchmark.png",
+    "Nadam": "06_nadam_benchmark.png"
+}
+
+colors_map = {
+    "SGD": "#e74c3c",           # Red
+    "SGD + Momentum": "#e67e22", # Orange
+    "AdaGrad": "#f39c12",        # Amber
+    "RMSProp": "#9b59b6",        # Purple
+    "Adam": "#2980b9",           # Blue
+    "Nadam": "#27ae60"           # Green
+}
+
 for name, opt_fn in optimizer_configs.items():
     history, total_dur = train_optimizer(name, opt_fn, epochs=EPOCHS)
     all_results[name] = history
@@ -203,6 +221,31 @@ for name, opt_fn in optimizer_configs.items():
         "Epoch to 80% Acc": speed_metric,
         "Total Time (s)": round(total_dur, 2)
     })
+
+    # Save dedicated individual 2-panel figure for this optimizer
+    fig_ind, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 4))
+    epochs_range = list(range(1, EPOCHS + 1))
+    
+    ax1.plot(epochs_range, history["train_loss"], marker='o', color=colors_map[name], linewidth=2.2, label='Train Loss')
+    ax1.plot(epochs_range, history["val_loss"], marker='s', color='#7f8c8d', linestyle='--', linewidth=2, label='Val Loss')
+    ax1.set_title(f"{name} - Loss Trajectory (1000 Samples)", fontsize=11, fontweight='bold')
+    ax1.set_xlabel("Epoch", fontsize=10)
+    ax1.set_ylabel("Cross-Entropy Loss", fontsize=10)
+    ax1.legend(frameon=True)
+    ax1.grid(True, linestyle="--", alpha=0.6)
+    
+    ax2.plot(epochs_range, history["val_acc"], marker='^', color=colors_map[name], linewidth=2.2, label='Validation Accuracy')
+    ax2.set_title(f"{name} - Validation Accuracy (%)", fontsize=11, fontweight='bold')
+    ax2.set_xlabel("Epoch", fontsize=10)
+    ax2.set_ylabel("Accuracy (%)", fontsize=10)
+    ax2.legend(frameon=True)
+    ax2.grid(True, linestyle="--", alpha=0.6)
+    
+    plt.tight_layout()
+    ind_path = os.path.join("./plots", filename_map[name])
+    plt.savefig(ind_path, dpi=200)
+    plt.close(fig_ind)
+    print(f"[+] Saved individual plot for {name} to {ind_path}")
 
 # Convert to DataFrame
 df_summary = pd.DataFrame(summary_metrics)
