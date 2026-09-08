@@ -37,7 +37,9 @@ All detailed notes, mathematical derivations, experiment guides, and scripts hav
 4. 🎯 **[03. Application Scenarios & Viva Defense](./docs/03_application_scenarios_and_viva.md)**  
    *4-tier structured answers (Beginner, Technical, Math, 10-Second Viva Punchline) for teacher grilling scenarios.*
 5. 🎤 **[04. Presentation Slides & Word-for-Word Scripts](./docs/04_presentation_slides_and_scripts.md)**  
-   *Slide-by-slide layout (11 slides), diagram descriptions, and word-for-word scripts for Person 1, Person 2, and Person 3.*
+   *Slide-by-slide layout (12 slides), diagram descriptions, and word-for-word scripts for Kunal, Rahul, and Pankaj.*
+6. 🏗️ **[05. Architecture Pipelines & Step-by-Step Manual Calculations](./docs/05_architecture_pipelines_and_manual_walkthrough.md)**  
+   *Component block diagrams, Mermaid pipelines, and exact step-by-step hand calculations for all 6 optimizers.*
 
 ---
 
