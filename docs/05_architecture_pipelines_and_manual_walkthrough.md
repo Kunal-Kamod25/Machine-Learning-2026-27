@@ -32,9 +32,13 @@ graph TD
     G --> A
 ```
 
+![Universal Training Pipeline Architecture](../plots/training_pipeline_architecture.png)
+
 ---
 
 ## 🔬 2. Internal Pipeline & Architecture of Each Optimizer
+
+![Optimizer Internal Architecture Diagram](../plots/optimizer_mechanisms_architecture.png)
 
 ---
 

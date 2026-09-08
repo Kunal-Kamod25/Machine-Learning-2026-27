@@ -88,6 +88,16 @@ Validation Accuracy after 3 epochs under different learning rates $\eta \in [10^
 
 ---
 
+## 🏗️ Architectural & Pipeline Diagrams
+
+### 1. End-to-End System & Model Architecture Pipeline
+![Training Pipeline & Architecture](./plots/training_pipeline_architecture.png)
+
+### 2. Internal Dataflow & Buffer Architecture for Each Optimizer
+![Optimizer Mechanisms Architecture](./plots/optimizer_mechanisms_architecture.png)
+
+---
+
 ## 📈 Visual Benchmark Plots
 
 ### All Optimizers Comparison Curves
