@@ -56,18 +56,20 @@ All detailed notes, mathematical derivations, experiment guides, and scripts hav
 
 ## 🧪 Actual Empirical Benchmark Results (`experiment.py`)
 
-All six optimizers were trained under identical conditions on **Fashion-MNIST** using a 3-layer MLP ($784 \to 128 \to 64 \to 10$) starting from the exact same initial weight state $\theta_0$:
+All six optimizers were evaluated under strictly identical conditions on **Fashion-MNIST** using a 3-layer MLP ($784 \to 128 \to 64 \to 10$) trained on **1,000 image samples** (~100 images per clothing category) starting from the exact same initial weight state $\theta_0$:
 
-### 1. Training & Generalization Performance Table
+### 1. Training & Generalization Performance Table (1,000 Images Benchmark)
 
 | Optimizer | Final Train Loss | Final Val Loss | Final Val Acc (%) | Peak Val Acc (%) | Epoch to 80% Acc (Speed) | Total Time (s) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **SGD** | 0.3149 | 0.4443 | 84.32% | 84.32% | Epoch 3 | 93.26s |
-| **SGD + Momentum** | 0.2432 | 0.4761 | 84.56% | 84.93% | Epoch 2 | 93.13s |
-| **AdaGrad** | 0.2576 | 0.4138 | 85.42% | 85.43% | Epoch 2 | 89.01s |
-| **RMSProp** | 0.2318 | 0.5153 | 83.80% | 85.10% | **Epoch 1** | 91.31s |
-| **Adam** | 0.2298 | 0.4110 | **85.77%** | 85.80% | **Epoch 1** | 91.80s |
-| **Nadam** | **0.2237** | 0.4429 | 85.42% | **85.87%** | **Epoch 1** | 100.41s |
+| **SGD** | 0.5142 | 0.6549 | 75.10% | 75.90% | Did not cross 80% | **8.55s** |
+| **SGD + Momentum** | 0.3097 | 0.6583 | 78.10% | 79.60% | Did not cross 80% | **8.20s** |
+| **AdaGrad** | **0.2629** | 0.5982 | **79.80%** | 80.00% | Epoch 9 | **7.42s** |
+| **RMSProp** | 0.3147 | 0.7311 | 74.90% | 79.90% | Did not cross 80% | **7.64s** |
+| **Adam** | 0.2719 | **0.5817** | 79.40% | 80.10% | **Epoch 7** | **7.73s** |
+| **Nadam** | 0.2828 | 0.6255 | 77.60% | **80.30%** | Epoch 8 | **8.71s** |
+
+> ⏱️ *Notice: Because of the compact 1,000-sample dataset, the entire 10-epoch training for all six optimizers executes in **under 8 seconds each**!*
 
 ---
 
@@ -77,10 +79,10 @@ Validation Accuracy after 3 epochs under different learning rates $\eta \in [10^
 
 | Optimizer | $\eta = 0.1$ | $\eta = 0.01$ | $\eta = 0.001$ | $\eta = 0.0001$ | Empirical Analysis |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| **SGD** | 81.53% | 75.35% | 40.56% | 12.88% | **Severe drop** with small learning rate (12.88% is near random guessing). |
-| **SGD + Momentum** | 77.89% | **83.51%** | 73.42% | 40.26% | Velocity buffer boosts effective step size, maintaining 73.4% even at $\eta=0.001$. |
-| **AdaGrad** | 81.97% | **83.62%** | 78.97% | 52.78% | Adaptive denominator naturally scales up small updates. |
-| **Adam** | 10.49% | 81.95% | **83.67%** | 78.28% | **Extremely stable** from $10^{-2}$ to $10^{-4}$, but explodes/diverges if $\eta \ge 0.1$. |
+| **SGD** | 58.80% | 40.60% | 12.20% | 7.00% | **Severe degradation** when $\eta \le 0.01$ (at $10^{-4}$ it collapses to random guessing). |
+| **SGD + Momentum** | **70.90%** | 69.40% | 37.90% | 10.80% | Velocity accumulation maintains ~70% accuracy at both $\eta=0.1$ and $\eta=0.01$. |
+| **AdaGrad** | 70.70% | 70.90% | 70.60% | 37.50% | **Exceptional stability across $10^{-1}$ to $10^{-3}$** due to per-parameter adaptive scaling. |
+| **Adam** | 32.70% | **74.60%** | **74.50%** | 48.90% | **Sweet spot at $10^{-2}$ to $10^{-3}$ (74.6%)**, but overshoots if learning rate is set to 0.1. |
 
 ---
 

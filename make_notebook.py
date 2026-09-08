@@ -165,14 +165,17 @@ transform = transforms.Compose([
 train_dataset_full = datasets.FashionMNIST(root='./data', train=True, download=True, transform=transform)
 test_dataset = datasets.FashionMNIST(root='./data', train=False, download=True, transform=transform)
 
-# Use a clean 12,000 sample subset for fast and responsive training in notebooks
-train_indices = list(range(12000))
+# Use exactly 1,000 image samples (~100 per clothing category) for lightning-fast live demos
+train_indices = list(range(1000))
 train_subset = Subset(train_dataset_full, train_indices)
 
-train_loader = DataLoader(train_subset, batch_size=64, shuffle=True)
-val_loader = DataLoader(test_dataset, batch_size=256, shuffle=False)
+val_indices = list(range(1000))
+val_subset = Subset(test_dataset, val_indices)
 
-print(f"[OK] Fashion-MNIST ready: {len(train_subset)} training samples, {len(test_dataset)} validation samples.")
+train_loader = DataLoader(train_subset, batch_size=64, shuffle=True)
+val_loader = DataLoader(val_subset, batch_size=128, shuffle=False)
+
+print(f"[OK] Fashion-MNIST ready: {len(train_subset)} training images, {len(val_subset)} validation images.")
 """)
 
 # -------------------------------------------------------------

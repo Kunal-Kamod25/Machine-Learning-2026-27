@@ -62,13 +62,16 @@ print("[+] Loading Fashion-MNIST dataset...")
 full_train_dataset = datasets.FashionMNIST(root='./data', train=True, download=True, transform=transform)
 test_dataset = datasets.FashionMNIST(root='./data', train=False, download=True, transform=transform)
 
-# Use a representative subset of 12,000 samples for lightning-fast training on CPU while retaining full fidelity
-train_subset_indices = list(range(12000))
+# Use exactly 1,000 image samples (~100 per clothing class) for lightning-fast training & live demo
+train_subset_indices = list(range(1000))
 train_dataset = Subset(full_train_dataset, train_subset_indices)
 
+val_subset_indices = list(range(1000))
+val_dataset = Subset(test_dataset, val_subset_indices)
+
 train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
-val_loader = DataLoader(test_dataset, batch_size=256, shuffle=False)
-print(f"[+] Training samples: {len(train_dataset)}, Validation samples: {len(test_dataset)}")
+val_loader = DataLoader(val_dataset, batch_size=128, shuffle=False)
+print(f"[+] Configured benchmark: {len(train_dataset)} training images, {len(val_dataset)} validation images.")
 
 
 # -------------------------------------------------------------
