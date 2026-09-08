@@ -1,7 +1,7 @@
-Optimizer,Final Train Loss,Final Val Loss,Final Val Acc (%),Peak Val Acc (%),Epoch to 80% Acc,Total Time (s)
-SGD,0.5142,0.6549,75.1,75.9,Did not cross 80%,12.9
-SGD + Momentum,0.3097,0.6583,78.1,79.6,Did not cross 80%,11.65
-AdaGrad,0.2629,0.5982,79.8,80.0,Epoch 9,12.16
-RMSProp,0.3147,0.7311,74.9,79.9,Did not cross 80%,11.17
-Adam,0.2719,0.5817,79.4,80.1,Epoch 7,10.95
-Nadam,0.2828,0.6255,77.6,80.3,Epoch 8,10.12
+Optimizer,Final Train Loss,Final Val Loss,Final Val Acc (%),Peak Val Acc (%),Total Time (s)
+SGD,0.5142,0.6549,75.1,75.9,9.42
+SGD + Momentum,0.3097,0.6583,78.1,79.6,9.38
+AdaGrad,0.2629,0.5982,79.8,80.0,10.17
+RMSProp,0.3147,0.7311,74.9,79.9,9.52
+Adam,0.2719,0.5817,79.4,80.1,9.59
+Nadam,0.2828,0.6255,77.6,80.3,9.46
