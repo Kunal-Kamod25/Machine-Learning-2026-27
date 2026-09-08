@@ -1,0 +1,7 @@
+Optimizer,Final Train Loss,Final Val Loss,Final Val Acc (%),Peak Val Acc (%),Epoch to 80% Acc,Total Time (s)
+SGD,0.3149,0.4443,84.32,84.32,Epoch 3,93.26
+SGD + Momentum,0.2432,0.4761,84.56,84.93,Epoch 2,93.13
+AdaGrad,0.2576,0.4138,85.42,85.43,Epoch 2,89.01
+RMSProp,0.2318,0.5153,83.8,85.1,Epoch 1,91.31
+Adam,0.2298,0.411,85.77,85.8,Epoch 1,91.8
+Nadam,0.2237,0.4429,85.42,85.87,Epoch 1,100.41
