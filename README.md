@@ -17,9 +17,9 @@ To ensure equal mastery and seamless delivery, the presentation is divided into 
 
 | Presenter | Assigned Topic Area | Core Mathematical Focus | Analogy / Theme |
 | :--- | :--- | :--- | :--- |
-| **Person 1** | • Foundations of Optimization<br>• **Standard SGD**<br>• **SGD with Momentum** | • Loss surfaces & gradients<br>• Noisy mini-batch updates: $\theta - \eta g_t$<br>• Velocity accumulator: $v_{t+1} = \gamma v_t + \eta g_t$ | *"The Blind Hiker & The Heavy Bowling Ball: Moving downhill and gaining directional inertia."* |
-| **Person 2** | • **AdaGrad**<br>• **RMSProp** | • Cumulative squared gradients: $G_t = \sum g^2$<br>• Vanishing learning rate issue<br>• Leaky exponential moving average: $v_t = \beta v_{t-1} + (1-\beta)g^2$ | *"The Elephant's Memory vs. The Practical Worker: Adapting learning rates to feature frequencies."* |
-| **Person 3** | • **Adam**<br>• **Nadam**<br>• The Generalization Mystery | • Unifying 1st ($m_t$) and 2nd ($v_t$) moments<br>• Mathematical Bias Correction: $\frac{1}{1-\beta^t}$<br>• Nesterov lookahead momentum<br>• Flat vs. Sharp minima geometry | *"The Modern Standard: Combining velocity with active suspension, and why fast optimization can hurt generalization."* |
+| **Kunal** | • Foundations of Optimization<br>• **Standard SGD**<br>• **SGD with Momentum** | • Loss surfaces & gradients<br>• Noisy mini-batch updates: $\theta - \eta g_t$<br>• Velocity accumulator: $v_{t+1} = \gamma v_t + \eta g_t$ | *"The Blind Hiker & The Heavy Bowling Ball: Moving downhill and gaining directional inertia."* |
+| **Rahul** | • **AdaGrad**<br>• **RMSProp** | • Cumulative squared gradients: $G_t = \sum g^2$<br>• Vanishing learning rate issue<br>• Leaky exponential moving average: $v_t = \beta v_{t-1} + (1-\beta)g^2$ | *"The Elephant's Memory vs. The Practical Worker: Adapting learning rates to feature frequencies."* |
+| **Pankaj** | • **Adam**<br>• **Nadam**<br>• The Generalization Mystery | • Unifying 1st ($m_t$) and 2nd ($v_t$) moments<br>• Mathematical Bias Correction: $\frac{1}{1-\beta^t}$<br>• Nesterov lookahead momentum<br>• Flat vs. Sharp minima geometry | *"The Modern Standard: Combining velocity with active suspension, and why fast optimization can hurt generalization."* |
 | **All Members** | • **Empirical Benchmark**<br>• **Viva Defense** | • Controlled Fashion-MNIST comparison<br>• Learning rate sensitivity analysis<br>• Teacher cross-examination defense | *"Scientific rigor through identical starting conditions and objective metric evaluation."* |
 
 ---
